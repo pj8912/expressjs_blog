@@ -73,7 +73,7 @@ router.get('/upload', (req, res) => {
 router.post('/upload', (req, res) => {
     const post = req.body
     db.query(`INSERT INTO blogs(title, img_url, description) VALUES(
-        "${Prevention.escape(post.title)}", ${Prevention.escape(post.img_url)}, "${Prevention.escape(post.description)}"
+        ${Prevention.escape(post.title)}, ${Prevention.escape(post.img_url)}, ${Prevention.escape(post.description)}
     )`, (err, result) => {
         if (err) {
             console.log(err)
