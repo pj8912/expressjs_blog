@@ -1,0 +1,23 @@
+<%- include('includes/header.ejs') %>
+
+
+    <div class="card card-body rounded-0 m-auto mt-4 col-md-4 border-0">
+
+
+        <form action="/upload" method="post">
+            <div class="mb-2">
+                <input type="text" name="title" class="form-control rounded-0" placeholder="Post title">
+            </div>
+            <div class="mb-2">
+                <input type="text" name="img_url" class="form-control rounded-0" placeholder="Image URL">
+            </div>
+            <div class="mb-2">
+                <textarea name="description" class="form-control rounded-0" placeholder="description" cols="30" rows="10"></textarea>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-success rounded-0">Create Post</button>
+            </div>
+
+        </form>
+    </div>
+    <%- include('includes/footer.ejs') %>

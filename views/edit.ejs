@@ -1,0 +1,31 @@
+<%- include('includes/header.ejs') %>
+
+
+    <% blog.forEach((blog) =>{ %>
+
+        <div class="card card-body rounded-0 m-auto mt-4 col-md-4">
+
+            <form action="/edit/<%=blog.id%>?_method=put" method="post">
+
+                <p class="h4 text-center">Edit Post</p>
+
+                <div class="mb-2">
+                    <input type="text" name="title" value="<%= blog.title %>" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="text" name="img_url" value="<%= blog.img_url%>" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <textarea name="description" class="form-control" cols="30" rows="10">
+                        <%= blog.description %>
+                    </textarea>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary">submit</button>
+                </div>
+
+            </form>
+        </div>
+        <%}) %>
+
+            <%- include('includes/footer.ejs') %>
